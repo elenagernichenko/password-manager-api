@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
     # PATCH/PUT /users/:id
     def update
-      if @task.update(user_params)
+      if @user.update(user_params)
         render json: @user
       else
         render json: @user.errors, status: :unprocessable_entity
