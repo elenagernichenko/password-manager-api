@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :users do
-      resources :passwords
+      resources :passwords, only: [:index, :show, :create, :update, :destroy]
     end
   end
 end
