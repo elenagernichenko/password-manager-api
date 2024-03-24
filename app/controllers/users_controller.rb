@@ -1,18 +1,18 @@
 class UsersController < ApplicationController
     before_action :set_user, only: [:show, :update, :destroy]
 
-    # GET /users
+    # GET /api/users
     def index
       @users = User.all
       render json: @users
     end
 
-    # GET /users/:id
+    # GET /api/users/:id
     def show
       render json: @user
     end
 
-    # POST /users
+    # POST /api/users
     def create
       @user = User.new(user_params)
 
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       end
     end
 
-    # PATCH/PUT /users/:id
+    # PATCH/PUT /api/users/:id
     def update
       if @user.update(user_params)
         render json: @user
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
       end
     end
 
-    # DELETE /users/:id
+    # DELETE /api/users/:id
     def destroy
       @user.destroy
     end

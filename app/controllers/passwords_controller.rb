@@ -1,18 +1,18 @@
 class PasswordsController < ApplicationController
   before_action :set_password, only: [:show, :update, :destroy]
 
-  # GET /users/:user_id/passwords
+  # GET /api/users/:user_id/passwords
   def index
     @passwords = Password.all
     render json: @passwords
   end
 
-  # GET /users/:user_id/passwords/:id
+  # GET /api/users/:user_id/passwords/:id
   def show
     render json: @password
   end
 
-  # POST /users/:user_id/passwords/:id
+  # POST /api/users/:user_id/passwords
   def create
     @password = Password.new(password_params)
 
@@ -23,7 +23,7 @@ class PasswordsController < ApplicationController
     end
   end
 
-  # PUT/PATCH /users/:user_id/passwords/:id
+  # PUT/PATCH /api/users/:user_id/passwords/:id
   def update
     if @password.update(password_params)
       render json: @password
@@ -32,7 +32,7 @@ class PasswordsController < ApplicationController
     end
   end
 
-  # DELETE /users/:user_id/passwords/:id
+  # DELETE /api/users/:user_id/passwords/:id
   def destroy
     @password.destroy
 

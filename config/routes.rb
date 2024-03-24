@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  resources :users do
-    resources :passwords
+  namespace :api, defaults: { format: :json } do
+    resources :users do
+      resources :passwords
+    end
   end
 end
